@@ -29,8 +29,8 @@ func Filemd5Sum(pathToFile string) (result string, err error) {
 func Md5Sum(s string) (result string) {
 	hash := md5.New()
 	hash.Write([]byte(s))
-	result = hex.EncodeToString(hash.Sum(nil))
-	return
+	result2 := hex.EncodeToString(hash.Sum(nil))
+	return fmt.Sprintf("{\"hash\": \"%x\"}", result2)
 }
 
 func Hash(data string) string {
