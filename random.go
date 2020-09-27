@@ -16,7 +16,7 @@ func GetRandomName() string {
 	bs := make([]byte, 4)
 	binary.LittleEndian.PutUint32(bs, math_rand.Uint32())
 	result = mnemonicode.EncodeWordList(result, bs)
-	return strings.Join(result, "-")
+	return strings.Join(result, "-!-")
 }
 
 // src is seeds the random generator for generating random strings
